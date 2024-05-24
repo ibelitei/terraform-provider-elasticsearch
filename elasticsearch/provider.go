@@ -1,13 +1,12 @@
-package terraform_provider_elasticsearch
+package elasticsearch
 
 import (
-	"net/url"
-
 	es "github.com/elastic/go-elasticsearch/v7"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	"net/url"
 )
 
-// providerOpts the options for the provider
+// options for the provider
 type providerOpts struct {
 	url *url.URL
 }
@@ -16,7 +15,7 @@ type providerOpts struct {
 func Provider() *schema.Provider {
 	return &schema.Provider{
 		ResourcesMap: map[string]*schema.Resource{
-			"elasticsearch_index": resourceIndexTemplate(),
+			"elasticsearch_index": resourceIndex(),
 		},
 		DataSourcesMap: map[string]*schema.Resource{},
 		Schema: map[string]*schema.Schema{
@@ -33,8 +32,9 @@ func Provider() *schema.Provider {
 
 // provider configuration
 func configureProvider(d *schema.ResourceData) (interface{}, error) {
-	urles := d.Get("url").(string)
-	parsedURL, err := url.Parse(urles)
+	urlES := d.Get("url").(string)
+	parsedURL, err := url.Parse(urlES)
+
 	if err != nil {
 		return nil, err
 	}

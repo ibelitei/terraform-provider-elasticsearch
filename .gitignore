@@ -55,9 +55,9 @@ override.tf.json
 
 # Ignore CLI configuration files
 .terraformrc
+.terrafor
 terraform.rc
 
 # Idea
 .idea
-
 .ideaBhNNj8Mw8APt

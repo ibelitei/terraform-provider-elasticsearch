@@ -18,4 +18,5 @@ Clone the repository and build the provider:
 ```bash
 git clone https://github.com/<your-username>/terraform-provider-elasticsearch.git
 cd terraform-provider-elasticsearch
-go build -o terraform-provider-elasticsearch
+make install
+```
