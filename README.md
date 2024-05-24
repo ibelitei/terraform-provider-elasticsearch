@@ -4,8 +4,8 @@ This Terraform provider enables you to manage Elasticsearch resources, specifica
 
 ## Requirements
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.12.x or newer
-- [Go](https://golang.org/doc/install) 1.14 or newer
+- [Terraform](https://www.terraform.io/downloads.html) v1.1.7
+- [Go](https://golang.org/doc/install) 1.22 or newer
 
 ## Installation
 
@@ -18,4 +18,5 @@ Clone the repository and build the provider:
 ```bash
 git clone https://github.com/<your-username>/terraform-provider-elasticsearch.git
 cd terraform-provider-elasticsearch
-go build -o terraform-provider-elasticsearch
+make install
+```
