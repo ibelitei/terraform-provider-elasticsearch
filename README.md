@@ -20,3 +20,37 @@ git clone https://github.com/<your-username>/terraform-provider-elasticsearch.gi
 cd terraform-provider-elasticsearch
 make install
 ```
+
+## Variables Makefile
+
+- `HOSTNAME`: The registry hostname where the provider is hosted.
+- `NAMESPACE`: The namespace of the provider.
+- `NAME`: The name of the provider.
+- `BINARY`: The name of the binary file that will be built.
+- `VERSION`: The version of the provider.
+- `OS_ARCH`: The operating system and architecture for which the provider is built.
+
+## Default Target
+The default target is `install`, which builds and installs the Terraform provider.
+
+## Targets
+### `build`
+Build the Terraform provider binary for local use.
+Usage:
+```sh
+make build
+```
+Build the provider and installs it in the Terraform plugins directory.
+```sh
+make install
+```
+Run an Elasticsearch instance using Docker Compose.
+```sh
+make run-elasticsearch
+```
+
+Run Test
+```sh
+make test
+```
+

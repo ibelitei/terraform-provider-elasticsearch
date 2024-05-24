@@ -21,3 +21,11 @@ run-elasticsearch:
 	@echo Running elasticsearch
 	docker-compose -f docker-compose.yml up -d
 	sleep 15
+
+test: build install run-elasticsearch
+	@echo Terraform apply
+	rm -rf examples/.terraform*
+	rm -rf examples/terraform*
+	terraform -chdir=examples/ init
+	terraform -chdir=examples/ apply -auto-approve
+
